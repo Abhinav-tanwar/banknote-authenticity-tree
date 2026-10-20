@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Banknote Authenticity Tree</title><style>body{font:16px/1.55 system-ui;background:#eef3f6;color:#173448;margin:0}main{max-width:1100px;margin:auto;padding:36px 24px}header{border-top:5px solid #28778b;padding-top:18px}.eyebrow{font-size:12px;letter-spacing:2px;color:#28778b}h1{font-size:39px;line-height:1.15;letter-spacing:-1px}h2{font-size:22px;margin-top:28px}a{color:#246a80}.notice{background:#fff1dc;padding:14px 18px;border-left:4px solid #cc873e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:16px}.card,details{background:white;border:1px solid #d2dfe7;border-radius:10px;padding:18px}.card h2{margin:10px 0;font-size:21px}.card p{font-size:14px;color:#51697a}.card{color:inherit;text-decoration:none}table{background:white;border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:9px;border-bottom:1px solid #dce5eb;overflow-wrap:anywhere}pre{font-size:12px;overflow:auto}img{max-width:100%;border-radius:8px}footer{margin-top:30px;font-size:13px;color:#51697a}</style></head><body><main><header><p class="eyebrow">ABHINAV TANWAR · R ANALYSIS</p><h1>Banknote Authenticity Tree</h1><p>Held-out decision-tree evaluation with an explicitly defined counterfeit class.</p></header><h2>Scope and methods</h2><p>Loads the original mclust banknote dataset through the R package. The positive class is explicitly counterfeit rather than relying on factor order. A stratified 70/30 split is used; tree pruning uses only training cross-validation. ROC points are ordered by increasing false-positive rate before trapezoidal integration. Rank-based and manual AUC must agree. This fixes the potential negative AUC caused by curve orientation in the source.</p><h2>Measured results</h2><table><tr><th>Calculated measure</th><th>Value</th></tr><tr><td>rows</td><td>200</td></tr><tr><td>train rows</td><td>140</td></tr><tr><td>test rows</td><td>60</td></tr><tr><td>selected cp</td><td>0</td></tr><tr><td>metrics / accuracy</td><td>0.9833</td></tr><tr><td>metrics / recall</td><td>0.9667</td></tr><tr><td>metrics / precision</td><td>1</td></tr><tr><td>metrics / specificity</td><td>1</td></tr><tr><td>metrics / roc auc</td><td>0.9833</td></tr><tr><td>manual trapezoid auc</td><td>0.9833</td></tr></table><h2>Tree Roc</h2><img alt="tree-roc" src="results/tree-roc.png"><details><summary>Full result structure</summary><pre>{
+  &quot;rows&quot;: 200,
+  &quot;train_rows&quot;: 140,
+  &quot;test_rows&quot;: 60,
+  &quot;positive&quot;: &quot;counterfeit&quot;,
+  &quot;selected_cp&quot;: 0,
+  &quot;metrics&quot;: {
+    &quot;accuracy&quot;: 0.9833333333333,
+    &quot;recall&quot;: 0.9666666666667,
+    &quot;precision&quot;: 1,
+    &quot;specificity&quot;: 1,
+    &quot;roc_auc&quot;: 0.9833333333333,
+    &quot;confusion&quot;: {
+      &quot;actual_0&quot;: [
+        30,
+        0
+      ],
+      &quot;actual_1&quot;: [
+        1,
+        29
+      ]
+    }
+  },
+  &quot;manual_trapezoid_auc&quot;: 0.9833333333333
+}</pre></details><footer>Calculated by the included native script. Public-repository status is recorded in the collection index.</footer></main></body></html>
